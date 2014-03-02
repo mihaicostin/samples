@@ -2,7 +2,9 @@ package com.mc.spring.samples.console.persistence.model;
 
 import javax.persistence.*;
 
-
+/**
+ * User model, annotated with JPA (the jpa provider is hibernate).
+ */
 @Entity
 @Table(name = "users")
 public class User {

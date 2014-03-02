@@ -7,6 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * This DAO is using the hibernate session directly.
+ * It's marked with @Repository for the exception handling - see PersistenceExceptionTranslationPostProcessor.
+ */
 @Repository
 public class UserDao {
 
