@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class ListOp {
 
@@ -36,12 +37,17 @@ public class ListOp {
         input.stream().map(e -> e + 1).forEach(output::add);
         System.out.println(output);
 
+        //or using also the provided collector...
+        output = input.stream().map(e -> e + 1).collect(Collectors.toList());
+        System.out.println(output);
+
+
+
         //so far the output list has the same size as input list. the operation is performed per element.
 
 
         //using filter and map to process only part of the input list.
-        output.clear();
-        input.stream().filter(e -> e < 5).map(e -> e + 10).forEach(output::add);
+        output = input.stream().filter(e -> e < 5).map(e -> e + 10).collect(Collectors.toList());
         System.out.println(output);
 
 
