@@ -7,6 +7,13 @@ import java.util.function.Function;
 
 public class ListOp {
 
+    private static <T> List<T> process(List<T> input, Function<T, T> function) {
+        List<T> result = new ArrayList<>();
+        for (T el : input) {
+            result.add(function.apply(el));
+        }
+        return result;
+    }
 
     public static void main(String[] args) {
 
@@ -32,14 +39,13 @@ public class ListOp {
         //so far the output list has the same size as input list. the operation is performed per element.
 
 
+        //using filter and map to process only part of the input list.
+        output.clear();
+        input.stream().filter(e -> e < 5).map(e -> e + 10).forEach(output::add);
+        System.out.println(output);
+
+
     }
 
-    private static List<Integer> process(List<Integer> input, Function<Integer, Integer> function) {
-        List<Integer> result = new ArrayList<>();
-        for (Integer el : input) {
-            result.add(function.apply(el));
-        }
-        return result;
-    }
 
 }
