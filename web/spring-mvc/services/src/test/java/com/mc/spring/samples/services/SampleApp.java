@@ -2,13 +2,13 @@ package com.mc.spring.samples.services;
 
 import com.mc.spring.samples.services.persistence.model.User;
 import com.mc.spring.samples.services.service.UserService;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class SampleApp {
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ServicesConfig.class);
 
         UserService userService = context.getBean(UserService.class);
 

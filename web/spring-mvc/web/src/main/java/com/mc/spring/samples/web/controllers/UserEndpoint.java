@@ -1,6 +1,8 @@
 package com.mc.spring.samples.web.controllers;
 
 import com.mc.spring.samples.services.persistence.model.User;
+import com.mc.spring.samples.services.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -10,12 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping(value = "/users")
 public class UserEndpoint {
+
+    @Autowired
+    private UserService userService;
 
 
     @RequestMapping(value = "/endpoint", method = RequestMethod.GET, headers = "Accept=text/plain")
@@ -46,9 +50,7 @@ public class UserEndpoint {
 
     @RequestMapping(value = "/allUsers", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<User> getAllUsers() {
-        List<User> response = new ArrayList<>();
-        //TODO: invoke service and get the actual list.
-        return response;
+        return userService.getUsers();
     }
 
 

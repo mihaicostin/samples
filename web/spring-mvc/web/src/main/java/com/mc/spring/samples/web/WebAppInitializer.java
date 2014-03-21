@@ -1,5 +1,6 @@
 package com.mc.spring.samples.web;
 
+import com.mc.spring.samples.services.ServicesConfig;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -8,7 +9,7 @@ import javax.servlet.Filter;
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[]{ /*...*/}; //TODO: add service layer java configurations.
+        return new Class<?>[]{ServicesConfig.class};
     }
 
     @Override
