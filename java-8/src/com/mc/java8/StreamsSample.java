@@ -28,10 +28,10 @@ public class StreamsSample {
 
 
         System.out.println("And now, Fibonacci... ");
-        Stream<Integer> fibStream =
-                Stream.iterate(new Pair<>(0, 1), pair -> new Pair<>(pair.b, pair.a + pair.b)).map(pair -> pair.b);
-
-        fibStream.limit(15).forEach(System.out::println);
+        Stream.iterate(new Pair<>(0, 1), pair -> new Pair<>(pair.b, pair.a + pair.b))
+                .map(pair -> pair.b)
+                .limit(15)
+                .forEach(System.out::println);
 
         //don't try this out.
         //System.out.println(fibStream.count());
