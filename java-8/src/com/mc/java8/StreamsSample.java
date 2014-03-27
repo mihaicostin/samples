@@ -1,6 +1,7 @@
 package com.mc.java8;
 
 
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamsSample {
@@ -35,6 +36,13 @@ public class StreamsSample {
 
         //don't try this out.
         //System.out.println(fibStream.count());
+
+        //generate numbers and split the first 20 into odd and even, then print them out.
+        Stream.iterate(0, e -> e + 1).limit(20).
+                collect(Collectors.groupingBy(e -> {
+                    if (e % 2 == 0) return "even";
+                    else return "odd";
+                })).forEach((k, v) -> System.out.println(k + " : " + v));
 
     }
 }
