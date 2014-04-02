@@ -1,0 +1,9 @@
+
+description = 'Spring MVC Sample - Services'
+dependencies {
+    compile group: 'org.springframework', name: 'spring-context', version:'4.0.2.RELEASE'
+    compile group: 'org.springframework', name: 'spring-orm', version:'4.0.2.RELEASE'
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:'4.3.2.Final'
+    compile group: 'org.hibernate', name: 'hibernate-c3p0', version:'4.3.2.Final'
+    compile group: 'org.postgresql', name: 'postgresql', version:'9.3-1101-jdbc4'
+}

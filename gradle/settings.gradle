@@ -1,0 +1,6 @@
+rootProject.name = 'spring-mvc'
+include ':services'
+include ':web'
+
+project(':services').projectDir = "$rootDir/services" as File
+project(':web').projectDir = "$rootDir/web" as File
