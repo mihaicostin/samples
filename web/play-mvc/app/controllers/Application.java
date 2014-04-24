@@ -1,19 +1,20 @@
 package controllers;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import play.mvc.Controller;
 import play.mvc.Result;
-import services.ServicesConfig;
-import services.persistence.model.User;
 import services.UserService;
+import services.persistence.model.User;
 
+@org.springframework.stereotype.Controller
 public class Application extends Controller {
 
-    public static Result index() {
-        //return ok(index.render("Your new application is ready."));
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ServicesConfig.class);
+    @Autowired
+    private UserService userService;
 
-        UserService userService = context.getBean(UserService.class);
+    public Result index() {
+
+        //return ok(index.render("Your new application is ready."));
 
         userService.saveUser(new User("user", "u", "s", "u@s.er"));
 

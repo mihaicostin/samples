@@ -2,6 +2,7 @@ name := "play-mvc"
 
 version := "1.0-SNAPSHOT"
 
+ebeanEnabled := false
 
 libraryDependencies ++= Seq(
   javaJpa.exclude("org.hibernate.javax.persistence", "hibernate-jpa-2.0-api"),
