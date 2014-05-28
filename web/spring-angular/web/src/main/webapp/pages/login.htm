@@ -1,0 +1,60 @@
+<div id="wrapper" class="main">
+
+    <div class="login-container">
+
+        <h1>Welcome!</h1>
+
+        <h4>{{loginMessage}}</h4>
+
+        <form class="login-form"
+              ng-submit="login()"
+              method="post"
+              autocomplete="off"
+              name="loginForm">
+
+            <div class="header">
+                <h1>Login Form</h1>
+                <span>Fill out the form below to login to my super awesome imaginary control panel.</span>
+            </div>
+
+            <div class="content">
+                <input name="username"
+                       class="input username"
+                       id="username"
+                       ng-model="$parent.username"
+                       autocomplete="off"
+                       tabindex="1"
+                       type="text"
+                       placeholder="Username"
+                       ng-blur="changeInputStyle($event)"
+                       required>
+
+                <div class="user-icon"></div>
+                <input name="password"
+                       class="input password"
+                       id="password"
+                       ng-model="$parent.password"
+                       autocomplete="off"
+                       tabindex="2"
+                       type="password"
+                       placeholder="Password"
+                       ng-blur="changeInputStyle($event)"
+                       required>
+
+                <div class="pass-icon"></div>
+            </div>
+
+            <span class="login-err">{{loginError}}</span>
+
+            <div class="footer">
+                <button class="btn login-btn" type="submit"> Login</button>
+                <a class="forgot-link" href="#">Forgot your password ?</a>
+            </div>
+
+
+        </form>
+
+
+    </div>
+</div>
+

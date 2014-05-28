@@ -1,0 +1,28 @@
+<div class="mainScreen adminScreen">
+
+    <h2>Users</h2>
+
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in users">
+                <td>{{$index}}</td>
+                <td class="user">{{user.username}}</td>
+                <td>
+                    <button class="small alert-danger" ng-click="removeUser($index)">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
